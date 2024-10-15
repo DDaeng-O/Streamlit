@@ -40,7 +40,6 @@ df = pd.DataFrame({'A': [1, 2, 3],'B': [4, 5, 6],'C': [7, 8, 9]})
 df # 👈 데이터프레임 출력
 
 # 차트
-%pip install matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 
