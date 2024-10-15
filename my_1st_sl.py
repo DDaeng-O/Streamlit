@@ -218,7 +218,7 @@ if button1:
     progress = st.progress(0)
     for i in range(101):
         progress.progress(i)
-        if i % 20 = 0:
+        if i % 20 == 0:
             st.write(f'진행 상태: {i}%')
         time.sleep(0.05)
 
@@ -229,6 +229,7 @@ if button2:
     with st.spinner('로딩 중입니다...'):
         time.sleep(3)
         st.success('로딩 완료!')
+st.divider() # 👈 구분선
 
 # 버튼 ============================
 st.header(':blue[버튼]')
@@ -247,6 +248,7 @@ st.header(':blue[애니메이션]')
 button4 = st.button('풍선을 띄워보세요') # 버튼은 클릭 여부를 반환
 if button4:
     st.balloons() # 풍선 애니메이션 출력
+st.divider() # 👈 구분선
 
 button5 = st.button('눈을 내려 보세요') # 버튼은 클릭 여부를 반환
 if button5:
