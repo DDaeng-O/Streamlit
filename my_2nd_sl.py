@@ -50,3 +50,10 @@ fig, ax = plt.subplots()
 ax.plot(x, y)
 fig # 👈 차트 출력
 
+# 사이드바
+st.header('⬅️⬅️⬅️⬅️ 사이드바')
+st.sidebar.write(' # 사이드바 텍스트')
+st.sidebar.checkbox('체크박스 1')
+st.sidebar.checkbox('체크박스 2')
+st.sidebar.radio('라디오 버튼', ['radio 1','radio 2','radio 3'])
+st.sidebar.selectbox('셀렉트박스', ['select 1','select 2','select 3'])
