@@ -44,7 +44,12 @@ chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a","b","c"])
 
 st.bar_chart(chart_data) # 바 차트 출력`
 
+# 이미지 출력
+from PIL import Image # 이미지 처리를 위한 PIL 라이브러리 임포트
 
+st.write('# 4. 이미지 표시하기') # 텍스트 출력
+img = Image.open('python.png') # 이미지 파일 열기
+st.image(img, width=300) # 이미지 출력
 st.divider() # 👈 구분선
 
 
