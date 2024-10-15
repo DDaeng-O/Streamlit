@@ -28,7 +28,7 @@ st.divider() # 👈 구분선
 '''
 # 👑 Magic에 마크다운을 조합
 1. ordered item
-    - 강조: **unordered item *
+    - 강조: **unordered item **
     - 기울임: *unordered item*
 2. ordered item
 3. ordered item
