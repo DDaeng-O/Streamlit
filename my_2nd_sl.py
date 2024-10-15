@@ -39,16 +39,6 @@ import pandas as pd
 df = pd.DataFrame({'A': [1, 2, 3],'B': [4, 5, 6],'C': [7, 8, 9]})
 st.write(df) # 👈 데이터프레임 출력
 
-# 차트
-import matplotlib.pyplot as plt
-import numpy as np
-
-x = np.linspace(0, 10, 100)
-y = np.sin(x)
-
-fig, ax = plt.subplots()
-ax.plot(x, y)
-fig # 👈 차트 출력
 
 # 사이드바
 st.header('⬅️⬅️⬅️⬅️ 사이드바')
