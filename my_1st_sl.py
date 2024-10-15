@@ -135,11 +135,11 @@ with tab_2:
     st.write(' # 탭BBBBB')
     st.write('이것은 탭B의 내용입니다.')
     '''
-    '''python
+    ```python
     import pandas as pd
     a=3
     b=4
-    '''
+    ```
     '''
     
 tab_3.write(' # 탭CCCCC')
