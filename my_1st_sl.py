@@ -167,6 +167,7 @@ st.write(' # :orange[파일 업로드]')
 file = st.file_uploader('파일을 업로드하세요')
 if file:
     st.write(f'업로드된 파일: {file}')
+st.divider() # 👈 구분선
 
 # 체크박스, 라디오 버튼, 셀렉트 박스, 멀티 셀렉트 박스 ============================
 st.header('✔️ :blue[체크박스, 라디오 버튼, 셀렉트 박스, 멀티 셀렉트 박스]')
@@ -191,6 +192,7 @@ st.write(select+'가 선택되었습니다.')
 st.write(' # :orange[멀티 셀렉트 박스]')
 multi = st.multiselect('여기에서 여러 값을 선택하세요', ['선택 1','선택 2','선택 3'])
 st.write(f'{type(multi) = }, {multi}가 선택되었습니다.')
+st.divider() # 👈 구분선
 
 # 슬라이더, 프로그레스 바 ============================
 st.header(':blue[슬라이더, 프로그레스 바]')
@@ -242,6 +244,7 @@ if button3:
 st.download_button('다운로드',
                     '이 내용이 다운로드 됨',
                     'download.txt') # 다운로드 버튼 생성
+st.divider() # 👈 구분선
 
 # 애니메이션 ============================
 st.header(':blue[애니메이션]')
@@ -253,3 +256,51 @@ st.divider() # 👈 구분선
 button5 = st.button('눈을 내려 보세요') # 버튼은 클릭 여부를 반환
 if button5:
     st.snow() # 풍선 애니메이션 출력
+
+# 캐싱
+st.header('💼 :blue[캐싱 적용]')
+
+import time
+
+@st.cache_data
+def long_running_function(param1):
+    time.sleep(5)
+    return param1*param1
+
+start = time.time()
+num_1 = st.number_input('입력한 숫자의 제곱을 계산합니다.') # 숫자 입력은 입력된 값을 반환
+st.write(f'{num_1}의 제곱은 {long_running_function(num_1)} 입니다. 계산시간은 {time.time()-start:.2f}초 소요')
+st.write('🔖 :green[캐싱이 적용되면 동일한 계산은 저장된 결과를 사용하여 빠르게 처리함]')
+
+# 세션 상태
+st.header(':blue[세션 상태]')
+
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.random.randn(20, 2), columns=["x","y"])
+
+st.write(' # :orange[session_state를 사용하지 않은 경우]')
+color1 = st.color_picker("Color1","#FF0000")
+
+st.divider() # 구분선
+st.scatter_chart(df, x="x", y="y", color=color1)
+
+if "df" not in st.session_state:
+    st.session_state.df = pd.DataFrame(np.random.randn(20, 2), columns=["x","y"])
+
+st.write(' # :orange[session_state를 사용한 경우]')
+color2 = st.color_picker("Color2","#FF0000")
+st.divider() # 구분선
+st.scatter_chart(st.session_state.df, x="x", y="y", color=color2)
+st.write('🔖 :green[session_state를 사용하면, 저장된 state를 사용하므로 값이 고정됨]')
+st.divider() # 구분선
+
+# 앞의 코드 +
+import streamlit as st
+
+st.title('이것은 서브페이지 1')
+
+import streamlit as st
+
+st.title('이것은 서브페이지 2')
