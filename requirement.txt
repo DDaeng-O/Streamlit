@@ -4,6 +4,8 @@ numpy == 1.26.4
 geopandas == 0.14.2
 folium == 0.14.0
 streamlit_folium == 0.23.2
-pyproj
-shapely
-fiona
+pyproj == 3.6.1
+shapely == 2.0.5
+fiona == 1.9.5
+streamlit == 1.40.1
+pandas == 2.2.2
