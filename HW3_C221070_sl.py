@@ -6,8 +6,7 @@ import geopandas as gpd
 from streamlit_folium import folium_static 
 
 
-st.title("데이터시각화_과제3번_C221070_채지오")
-st.title("행정구역별 합계출산율 시각화")
+st.title("데이터시각화_과제3번_C221070_채지오 : 행정구역별 합계출산율 시각화")
 st.write("이 앱은 Folium과 Streamlit을 사용하여 대한민국 행정구역별 합계출산율을 시각화합니다.")
 st.divider()
  
