@@ -8,6 +8,7 @@ from streamlit_folium import folium_static
 
 st.title("데이터시각화_과제3번_C221070_채지오 : 행정구역별 합계출산율 시각화")
 st.write("이 앱은 Folium과 Streamlit을 사용하여 대한민국 행정구역별 합계출산율을 시각화합니다.")
+st.markdown("#### 배포 링크 : https://datavisualization-hw3-c221070-chaejioh.streamlit.app/")
 st.divider()
  
 st.write('# 1. 데이터 불러오기')
@@ -104,15 +105,6 @@ folium.Choropleth(
     line_opacity=0.5, # 선 투명도
     legend_name='합계출산율' # 범례 이름
 ).add_to(map)
-# Popup 추가: 각 지역의 지역명과 합계출산율
-for idx, row in df_sel.iterrows():
-    region_name = row['행정구역별']
-    birth_rate = row['합계출산율']
-    geo_match = gdf_kor[gdf_kor['CTP_KOR_NM'] == region_name]
-    if not geo_match.empty:
-        coords = geo_match.geometry.centroid.y.values[0], geo_match.geometry.centroid.x.values[0]
-        popup_text = f"<b>지역명:</b> {region_name}<br><b>합계출산율:</b> {birth_rate}"
-        folium.Marker(location=coords, popup=folium.Popup(popup_text, max_width=300)).add_to(map)
 map # 지도 출력하기
 folium_static(map)
 
