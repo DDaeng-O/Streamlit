@@ -103,12 +103,13 @@ folium.Choropleth(
     fill_color='BuPu', # 색상 Blue-Purple
     fill_opacity=0.7, # 투명도
     line_opacity=0.5, # 선 투명도
-    legend_name='합계출산율' # 범례 이름
+    legend_name='합계출산율' # 범례 이름,
+    tooltip=folium.GeoJsonTooltip(
+        fields=['CTP_KOR_NM', '합계출산율'],  # 실제 컬럼명으로 수정
+        aliases=['지역:', '합계출산율:'],
+        localize=True
 ).add_to(map)
-# GeoJson 부분에서
-folium.Popup(
-    str(row.iloc[0])  # 또는 적절한 열 이름
-).add_to(sim_geo)
+
 map # 지도 출력하기
 folium_static(map)
 
