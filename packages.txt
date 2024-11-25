@@ -5,7 +5,3 @@ python3-gdal
 gdal-bin
 libgdal-dev
 libspatialindex-dev
-requests-dev
-pandas-dev
-geopy-dev
-numpy-dev
