@@ -1,3 +1,9 @@
+!pip install geopandas
+!pip install folium
+!pip install streamlit_folium
+!pip install streamlit
+!pip install pandas
+
 import streamlit as st
 import geopandas as gpd
 import pandas as pd
