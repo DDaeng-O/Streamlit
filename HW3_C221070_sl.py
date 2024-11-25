@@ -1,12 +1,10 @@
 import os
 import streamlit as st
 import pandas as pd
-
-# 지리 데이터 관련 라이브러리
-import fiona
+from streamlit_folium import st_folium
 import folium
 import geopandas as gpd
-from streamlit_folium import st_folium
+
 
 st.title("행정구역별 합계출산율 시각화")
 st.write("이 앱은 Folium과 Streamlit을 사용하여 대한민국 행정구역별 합계출산율을 시각화합니다.")
