@@ -87,8 +87,6 @@ st.write('# 3. 지도 시각화(folium)')
 st.subheader("Choropleth 지도")
 
 geo_json_data = gdf_kor.to_json()
-title = '행정구역별 합계출산율'
-title_html = f'<h3 align="center" style="font-size:20px"><b>{title}</b></h3>'
 korea_center = [36.5, 127.5]
 map = folium.Map(
     location=korea_center,
@@ -105,12 +103,12 @@ folium.Choropleth(
     line_opacity=0.5, # 선 투명도
     legend_name='합계출산율' # 범례 이름
 ).add_to(map)
+title = '행정구역별 합계출산율'
+title_html = f'<h3 align="center" style="font-size:20px"><b>{title}</b></h3>'
 map.get_root().html.add_child(folium.Element(title_html))
 map # 지도 출력하기
 folium_static(map)
 
-# 데이터프레임 표시
-st.subheader("합계출산율 데이터")
 
 # 사용자 상호작용
 st.sidebar.title("옵션")
