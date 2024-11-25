@@ -1,11 +1,9 @@
-import os
 import streamlit as st
-import pandas as pd
-from streamlit_folium import st_folium
 import folium
 import pandas as pd
 import numpy as np
 import geopandas as gpd
+from streamlit_folium import st_folium  
 
 
 
