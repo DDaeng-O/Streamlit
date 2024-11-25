@@ -16,8 +16,8 @@ st.write('# 1. 데이터 불러오기')
 st.write('## (1) 합계출산율 데이터')
 @st.cache_data
 def load_data():
-    gdf_kor = gpd.read_file("gdf_korea_sido_2022.json")
-    df = pd.read_csv("HW3_data.csv")
+    gdf_kor = gpd.read_file("..data/gdf_korea_sido_2022.json")
+    df = pd.read_csv("..data/HW3_data.csv")
     return gdf_kor, df
 gdf_kor, df = load_data()
 df
