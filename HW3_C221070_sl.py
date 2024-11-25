@@ -1,6 +1,24 @@
 import os
 import streamlit as st
 import pandas as pd
+import numpy as np
+
+# geopandas 관련 라이브러리
+import fiona
+import pyproj
+import rtree
+import shapely
+import geopandas as gpd
+
+# folium 관련
+import branca
+import jinja2
+import folium
+from streamlit_folium import st_folium
+
+import os
+import streamlit as st
+import pandas as pd
 import folium
 import geopandas as gpd
 from streamlit_folium import st_folium
