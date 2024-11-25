@@ -106,7 +106,20 @@ folium.Choropleth(
     legend_name='합계출산율' # 범례 이름,
     tooltip=['행정구역별', '합계출산율'] 
 ).add_to(map)
-
+# Tooltip 추가: 지역명과 합계출산율 표시
+folium.GeoJson(
+    geo_json_data,
+    style_function=lambda feature: {
+        "fillColor": "transparent",
+        "color": "transparent",
+        "weight": 0,
+    },
+    tooltip=folium.GeoJsonTooltip(
+        fields=["CTP_KOR_NM", "합계출산율"],
+        aliases=["지역명: ", "합계출산율: "],
+        localize=True,
+    ),
+).add_to(m)
 map # 지도 출력하기
 folium_static(map)
 
