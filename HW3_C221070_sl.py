@@ -105,8 +105,9 @@ folium.Choropleth(
     line_opacity=0.5, # 선 투명도
     legend_name='합계출산율' # 범례 이름
 ).add_to(map)
+# GeoJson 부분에서
 folium.Popup(
-    row["name"]  # 일단 지역 이름만 표시
+    str(row.iloc[0])  # 또는 적절한 열 이름
 ).add_to(sim_geo)
 map # 지도 출력하기
 folium_static(map)
