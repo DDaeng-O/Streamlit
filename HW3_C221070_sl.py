@@ -8,6 +8,7 @@ st.title("행정구역별 합계출산율 시각화")
 st.write("이 앱은 Folium과 Streamlit을 사용하여 대한민국 행정구역별 합계출산율을 시각화합니다.")
 st.divider()
 
+@st.cache_data() 
 st.write('# 1. 데이터 불러오기')
 # 데이터 로드
 st.write('## (1) 합계출산율 데이터')
