@@ -3,7 +3,7 @@ import folium
 import pandas as pd
 import numpy as np
 import geopandas as gpd
-from streamlit_folium import st_folium  
+from streamlit_folium import st_folium 
 
 
 
