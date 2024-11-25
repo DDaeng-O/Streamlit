@@ -8,7 +8,7 @@ from streamlit_folium import folium_static
 
 st.title("데이터시각화_과제3번_C221070_채지오 : 행정구역별 합계출산율 시각화")
 st.write("이 앱은 Folium과 Streamlit을 사용하여 대한민국 행정구역별 합계출산율을 시각화합니다.")
-st.markdown("#### 배포 링크 : https://datavisualization-hw3-c221070-chaejioh.streamlit.app/")
+st.markdown("#### 배포 링크 : https://app-uhlhz9gktaxmb5mhryf5xv.streamlit.app/")
 st.divider()
  
 st.write('# 1. 데이터 불러오기')
