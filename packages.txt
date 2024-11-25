@@ -1,11 +1,7 @@
 python3-pip
 python3-dev
-build-essential
-libproj-dev
-proj-data
-proj-bin
-libgeos-dev
 gdal-bin
 libgdal-dev
 python3-gdal
 libspatialindex-dev
+build-essential
