@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import folium
+import geopandas as gpd
 from streamlit_folium import st_folium
 
 st.title("행정구역별 합계출산율 시각화")
