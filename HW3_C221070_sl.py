@@ -106,18 +106,6 @@ folium.Choropleth(
     legend_name='합계출산율' # 범례 이름,
     tooltip=['행정구역별', '합계출산율'] 
 ).add_to(map)
-# Popup 추가 (지역명과 합계출산율 표시)
-for feature in geo_json_data["features"]:
-    region_name = feature["properties"]["CTP_KOR_NM"]
-    birth_rate = feature["properties"]["합계출산율"]
-    popup_text = f"<b>지역명:</b> {region_name}<br><b>합계출산율:</b> {birth_rate}"
-    folium.Marker(
-        location=[
-            feature["geometry"]["coordinates"][0][0][1],  # GeoJSON 좌표의 첫 번째 y값
-            feature["geometry"]["coordinates"][0][0][0],  # GeoJSON 좌표의 첫 번째 x값
-        ],
-        popup=folium.Popup(popup_text, max_width=250),
-    ).add_to(m)
 map # 지도 출력하기
 folium_static(map)
 
