@@ -2,6 +2,11 @@ import os
 import streamlit as st
 import pandas as pd
 
+# GDAL 관련 설정
+os.environ['GDAL_DATA'] = '/usr/share/gdal'
+
+# 지리 데이터 관련 라이브러리
+import fiona
 import folium
 import geopandas as gpd
 from streamlit_folium import st_folium
