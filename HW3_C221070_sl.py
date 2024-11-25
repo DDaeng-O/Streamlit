@@ -107,7 +107,7 @@ folium.Choropleth(
 ).add_to(map)
 folium.Popup(
     row["name"] + f" 합계출산율: {df.loc[df['시도'] == row['name'], '2021'].values[0]:.2f}"
-).add_to(sim_geo))
+).add_to(sim_geo)
 map # 지도 출력하기
 folium_static(map)
 
