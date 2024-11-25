@@ -3,6 +3,13 @@ import streamlit as st
 import pandas as pd
 from streamlit_folium import st_folium
 import folium
+
+# GDAL 설정
+os.environ['GDAL_DATA'] = '/usr/share/gdal'
+
+import pyproj
+import shapely
+import fiona
 import geopandas as gpd
 
 
