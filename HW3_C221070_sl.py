@@ -55,6 +55,8 @@ st.write('## (1) 매칭 결과 확인')
 '''
 # '행정구역별'과 'CTP_KOR_NM'에서 공백 제거
 [코드]
+
+
 '''
 df_sel['행정구역별'] = df_sel['행정구역별'].str.strip()
 gdf_kor['CTP_KOR_NM'] = gdf_kor['CTP_KOR_NM'].str.strip()
@@ -64,6 +66,8 @@ unmatched = df_sel[~df_sel['행정구역별'].isin(gdf_kor['CTP_KOR_NM'])]
 print("매칭되지 않은 데이터:")
 print(unmatched)
 '''
+
+
  => 아무런 결과도 나오지 않는 것이 best!
 '''
 df_sel['행정구역별'] = df_sel['행정구역별'].str.strip()
@@ -77,6 +81,9 @@ st.write('## (2) 매칭되지 않는 데이터 처리 및 확인')
 '''
 - 만약 위 과정에서 결과가 나왔다면-
 [코드]
+
+
+'''
 name_corrections = {
     '강원특별자치도': '강원도'
 }
@@ -85,6 +92,8 @@ df_sel['행정구역별'] = df_sel['행정구역별'].replace(name_corrections)
 unmatched = df_sel[~df_sel['행정구역별'].isin(gdf_kor['CTP_KOR_NM'])]
 print("매칭되지 않은 데이터:")
 print(unmatched)
+'''
+
 
 - 이 과정도 아무런 결과가 뜨지 않는 것이 best
 '''
