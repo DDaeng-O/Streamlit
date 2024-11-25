@@ -1,5 +1,5 @@
-!pip install geopandas
-!pip install folium
+$pip install geopandas
+$pip install folium
 !pip install streamlit_folium
 !pip install streamlit
 !pip install pandas
