@@ -5,6 +5,8 @@ streamlit_folium
 pandas
 numpy
 geopandas
+Pillow
+requests
 matplotlib
 mapclassify
 python-box
