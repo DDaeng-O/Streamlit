@@ -3,7 +3,23 @@ import streamlit as st
 import pandas as pd
 from streamlit_folium import st_folium
 import folium
-import geopandas as gpd
+import pandas as pd
+import numpy as np
+
+# 시스템 환경 변수 설정
+os.environ['PROJ_LIB'] = '/usr/share/proj'
+os.environ['GDAL_DATA'] = '/usr/share/gdal'
+
+# 지리 데이터 라이브러리
+try:
+    import pyproj
+    import shapely
+    import fiona
+    import geopandas as gpd
+except Exception as e:
+    st.error(f"라이브러리 import 오류: {str(e)}")
+    st.error("시스템 정보:")
+    st.error(os.environ)
 
 
 st.title("행정구역별 합계출산율 시각화")
