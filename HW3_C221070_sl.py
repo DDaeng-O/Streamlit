@@ -105,6 +105,9 @@ folium.Choropleth(
     line_opacity=0.5, # 선 투명도
     legend_name='합계출산율' # 범례 이름
 ).add_to(map)
+folium.Popup(
+    row["name"] + f" 합계출산율: {df.loc[df['시도'] == row['name'], '2022'].values[0]}"
+).add_to(sim_geo)
 map # 지도 출력하기
 folium_static(map)
 
