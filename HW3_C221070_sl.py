@@ -103,10 +103,9 @@ folium.Choropleth(
     line_opacity=0.5, # 선 투명도
     legend_name='합계출산율' # 범례 이름
 ).add_to(map)
+# 지도에 제목 추가 - colormap.add_to(map) 다음에 넣기
 title = '행정구역별 합계출산율'
-title_html = '''
-             <h3 align="center" style="font-size:16px"><b>{}</b></h3>
-             '''.format(title)
+title_html = f'<h3 align="center" style="font-size:20px"><b>{title}</b></h3>'
 map.get_root().html.add_child(folium.Element(title_html))
 map # 지도 출력하기
 folium_static(map)
