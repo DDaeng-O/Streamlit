@@ -110,13 +110,20 @@ folium_static(map)
 
 
 # 사용자 상호작용
-st.sidebar.title("옵션")
-selected_region = st.sidebar.selectbox(
-    "지역을 선택하세요", 
-    options=df_sel['행정구역별'].unique()
-)
+st.subheader("지역별 합계출산율 확인")  # 섹션 제목 추가
 
-if selected_region:
-    selected_data = df_sel[df_sel['행정구역별'] == selected_region]  # 인덱싱 문법 오류 수정
-    st.sidebar.write(f"선택된 지역: {selected_region}")
-    st.sidebar.write(f"합계출산율: {selected_data['합계출산율'].values[0]}")
+col1, col2 = st.columns(2)  # 2개의 컬럼으로 나누기
+
+with col1:
+    selected_region = st.selectbox(
+        "지역을 선택하세요", 
+        options=df_sel['행정구역별'].unique()
+    )
+
+with col2:
+    if selected_region:
+        selected_data = df_sel[df_sel['행정구역별'] == selected_region]
+        st.metric(
+            label=selected_region,
+            value=f"합계출산율: {selected_data['합계출산율'].values[0]}"
+        )
