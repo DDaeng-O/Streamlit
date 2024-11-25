@@ -3,7 +3,7 @@ import folium
 import pandas as pd
 import numpy as np
 import geopandas as gpd
-from streamlit_folium import st_folium 
+from streamlit_folium import folium_static 
 
 
 
@@ -107,6 +107,7 @@ folium.Choropleth(
 ).add_to(map)
 map.get_root().html.add_child(folium.Element(title_html))
 map # 지도 출력하기
+folium_static(map)
 
 # 데이터프레임 표시
 st.subheader("합계출산율 데이터")
