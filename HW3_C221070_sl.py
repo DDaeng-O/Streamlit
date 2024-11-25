@@ -7,17 +7,20 @@ from streamlit_folium import st_folium
 st.title("행정구역별 합계출산율 시각화")
 st.write("이 앱은 Folium과 Streamlit을 사용하여 대한민국 행정구역별 합계출산율을 시각화합니다.")
 st.divider()
-
-@st.cache_data() 
+ 
 st.write('# 1. 데이터 불러오기')
 # 데이터 로드
 st.write('## (1) 합계출산율 데이터')
-df = pd.read_csv("HW3_data.csv")
+@st.cache_data
+def load_data():
+    gdf_kor = gpd.read_file("gdf_korea_sido_2022.json")
+    df = pd.read_csv("HW3_data.csv")
+    return geo_data, birth_rate_data
+gdf_kor, df = load_data()
 df
 
 st.write('## (2) 행정구역 데이터')
-gdf_kor = gpd.read_file("gdf_korea_sido_2022.json")
-gdf_kor
+gdf_kor 
 st.divider()
 
 
