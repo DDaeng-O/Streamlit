@@ -3,8 +3,6 @@ import streamlit as st
 import pandas as pd
 from streamlit_folium import st_folium
 import folium
-import shapely
-import fiona
 import geopandas as gpd
 
 
