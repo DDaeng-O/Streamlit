@@ -16,7 +16,7 @@ st.write('## (1) 합계출산율 데이터')
 def load_data():
     gdf_kor = gpd.read_file("gdf_korea_sido_2022.json")
     df = pd.read_csv("HW3_data.csv")
-    return geo_data, birth_rate_data
+    return gdf_kor, df
 gdf_kor, df = load_data()
 df
 
@@ -110,6 +110,6 @@ selected_region = st.sidebar.selectbox(
 )
 
 if selected_region:
-    selected_data = df_sel['합계출생률'['행정구역별'] == selected_region]
+    selected_data = df_sel[df_sel['행정구역별'] == selected_region]  # 인덱싱 문법 오류 수정
     st.sidebar.write(f"선택된 지역: {selected_region}")
-    st.sidebar.write(selected_data)
+    st.sidebar.write(f"합계출산율: {selected_data['합계출산율'].values[0]}")
