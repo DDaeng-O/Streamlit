@@ -9,3 +9,4 @@ shapely == 2.0.5
 fiona == 1.9.5
 streamlit == 1.40.1
 pandas == 2.2.2
+rtree
