@@ -3,16 +3,5 @@ folium
 streamlit_folium
 pandas
 numpy
-geopandas
-pyproj
-shapely
-fiona
-gdal==3.0.4
-Pillow
-requests
-matplotlib
-mapclassify
-openpyxl
-scikit-learn
 plotly
 altair
