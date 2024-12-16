@@ -12,3 +12,6 @@ mapclassify
 python-box
 openpyxl
 scikit-learn
+plotly.express
+altair
+warnings
