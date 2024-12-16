@@ -1,5 +1,5 @@
 ### C221070_채지오
-### 배포링크 : 
+### 배포링크 : https://app-aau2bprauhvzshirgjlwcm.streamlit.app/
 
 import streamlit as st
 import pandas as pd
